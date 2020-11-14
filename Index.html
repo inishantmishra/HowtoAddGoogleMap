@@ -1,0 +1,53 @@
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Calculate Distance</h1>
+
+<div>
+    <div>
+        Source : <input class="travelfrom" type="text" name="name" value="Dwarka, New Delhi, India" /><br />
+        @*Destination: <input class="travelto" type="text" name="name" value="Uttam Nagar, New Delhi, India" /><br />
+        Destination: <input class="travelto" type="text" name="name" value="Agra, Uttar Pradesh, India" /><br />
+        Destination: <input class="travelto" type="text" name="name" value="Sector 64, Faridabad, Haryana, India" /><br />
+        Destination: <input class="travelto" type="text" name="name" value="ISIC, Vasant Kunj, New Delhi, India" /><br />
+        Destination: <input class="travelto" type="text" name="name" value="Unitech Infospace, Sector 21, Gurgaon, Haryana, India" /><br />*@
+        <br />
+        <input type="button" value="Get Route" onclick="GetRoute()" />
+
+        <input type="button" value="Get Distances" onclick="GetDistance()" />
+
+    </div>
+    <br />
+    <div>
+        <div id="timeTaken">
+        </div>
+        <hr />
+        <div id="dvDistance">
+            <table border="1" cellpadding="10">
+                <thead>
+                    <tr>
+                        <th> Start </th>
+                        <th> End </th>
+                        <th> Distance </th>
+                        <th> Duration </th>
+                    </tr>
+                </thead>
+                <tbody id="tblResults">
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+<div id="dvMap" style="min-height:500px"></div>
+
+
+@section Scripts {
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YourKey&callback=initMap&libraries=&v=weekly"
+            defer></script>
+    <script src="~/js/Distance/distance.js"></script>
+
+}
